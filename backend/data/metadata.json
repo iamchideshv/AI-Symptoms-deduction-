@@ -1,0 +1,62 @@
+{
+  "Common Cold": {
+    "urgency": "Low",
+    "advice": "Rest at home, stay hydrated, and take over-the-counter medicine if needed.",
+    "precautions": ["Drink warm fluids", "Get plenty of sleep", "Use saline nasal drops"],
+    "description": "A viral infection of your nose and throat (upper respiratory tract)."
+  },
+  "Flu": {
+    "urgency": "Medium",
+    "advice": "Rest and monitor symptoms. Consult a doctor if fever persists or breathing becomes difficult.",
+    "precautions": ["Avoid contact with others", "Stay hydrated", "Take antipyretics for fever"],
+    "description": "A common viral infection that can be deadly, especially in high-risk groups."
+  },
+  "COVID-19": {
+    "urgency": "High",
+    "advice": "Isolate yourself and consult a medical professional immediately. Monitor oxygen levels.",
+    "precautions": ["Wear a mask", "Self-isolate", "Consult a doctor for testing"],
+    "description": "An infectious disease caused by the SARS-CoV-2 virus."
+  },
+  "Migraine": {
+    "urgency": "Medium",
+    "advice": "Rest in a dark, quiet room. If pain is severe or unusual, consult a doctor.",
+    "precautions": ["Identify triggers", "Stay in a dark room", "Hydrate"],
+    "description": "A headache that can cause severe throbbing pain or a pulsing sensation, usually on one side of the head."
+  },
+  "Pneumonia": {
+    "urgency": "High",
+    "advice": "Requires medical evaluation. See a doctor soon as it can become severe.",
+    "precautions": ["Seek medical consultation", "Rest", "Completed prescribed antibiotics"],
+    "description": "An infection that inflames the air sacs in one or both lungs."
+  },
+  "Malaria": {
+    "urgency": "High",
+    "advice": "Seek immediate medical attention. Requires specific anti-malarial treatment.",
+    "precautions": ["Consult a doctor immediately", "Get blood test", "Use mosquito nets"],
+    "description": "A disease caused by a parasite, transmitted through the bite of infected mosquitoes."
+  },
+  "Typhoid": {
+    "urgency": "High",
+    "advice": "Consult a doctor for antibiotics. Untreated typhoid can be serious.",
+    "precautions": ["Drink boiled water", "Maintain hygiene", "Seek medical advice"],
+    "description": "A bacterial infection that can spread throughout the body, affecting many organs."
+  },
+  "Gastroenteritis": {
+    "urgency": "Medium",
+    "advice": "Focus on rehydration. See a doctor if you can't keep fluids down or have severe pain.",
+    "precautions": ["Drink ORS", "Eat bland foods", "Hand hygiene"],
+    "description": "An intestinal infection marked by diarrhea, cramps, nausea, vomiting, and fever."
+  },
+  "Allergy": {
+    "urgency": "Low",
+    "advice": "Avoid triggers. Antihistamines may help. Consult an allergist for persistent issues.",
+    "precautions": ["Avoid known allergens", "Keep environment clean", "Use antihistamines"],
+    "description": "A condition in which the immune system reacts abnormally to a foreign substance."
+  },
+  "Asthma": {
+    "urgency": "Medium",
+    "advice": "Use your rescue inhaler. Seek emergency care if breathing doesn't improve.",
+    "precautions": ["Avoid triggers", "Keep inhaler handy", "Follow asthma action plan"],
+    "description": "A condition in which your airways narrow and swell and may produce extra mucus."
+  }
+}
