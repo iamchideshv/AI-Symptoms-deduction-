@@ -1,6 +1,7 @@
 import os
 import sys
-from fastapi import FastAPI, HTTPException
+from dotenv import load_dotenv
+from fastapi import FastAPI, HTTPException, File, UploadFile, Form
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Optional
@@ -10,11 +11,15 @@ try:
     from app.nlp import extract_symptoms, normalize_text
     from app.model import SymptomModel
     from app.utils import load_metadata, get_disease_info
+    from app.image_analysis import analyze_skin_image
 except ImportError:
     # When running directly as python main.py or similar
     from nlp import extract_symptoms, normalize_text
     from model import SymptomModel
     from utils import load_metadata, get_disease_info
+    from image_analysis import analyze_skin_image
+
+load_dotenv(override=True)
 
 # Initial setup
 # Determine base directory
@@ -103,6 +108,24 @@ async def predict_disease(request: SymptomRequest):
         "extracted_symptoms": [s.replace('_', ' ').title() for s in final_symptoms],
         "disclaimer": "DISCLAIMER: This tool is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment."
     }
+
+@app.post("/api/analyze-image")
+async def analyze_image_endpoint(
+    file: UploadFile = File(...),
+    question: Optional[str] = Form(None)
+):
+    if not file.content_type.startswith("image/"):
+        raise HTTPException(status_code=400, detail="File must be an image")
+    
+    image_bytes = await file.read()
+    api_key = os.getenv("GEMINI_API_KEY")
+    
+    result = analyze_skin_image(image_bytes, api_key, user_question=question)
+    
+    if "error" in result:
+        raise HTTPException(status_code=400, detail=result["error"])
+        
+    return result
 
 if __name__ == "__main__":
     import uvicorn

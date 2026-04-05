@@ -1,59 +1,33 @@
 import React from 'react';
-import { ArrowRight, ShieldCheck, Zap, HeartPulse } from 'lucide-react';
+import { ArrowRight, HeartPulse } from 'lucide-react';
 
 const LandingPage = ({ onStart }) => {
     return (
-        <div className="flex flex-col items-center justify-center py-12 px-4 max-w-6xl mx-auto text-center">
-            <div className="inline-flex items-center space-x-2 bg-primary-50 px-3 py-1 rounded-full mb-6 border border-primary-100 shadow-sm">
-                <HeartPulse className="w-4 h-4 text-primary-600" />
-                <span className="text-xs font-bold text-primary-700 uppercase tracking-wider">Healthcare AI Demo</span>
-            </div>
-
-            <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 leading-tight">
-                Understand your health <br />
-                <span className="text-primary-600">with precision.</span>
-            </h1>
-
-            <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-                Describe your symptoms in plain English or select from our list. Get an instant analysis of potential conditions and recommended next steps.
-            </p>
-
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-16">
-                <button
-                    onClick={onStart}
-                    className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center space-x-2 transition-all transform hover:scale-105 shadow-lg shadow-primary-200"
-                >
-                    <span>Start Symptom Check</span>
-                    <ArrowRight className="w-5 h-5" />
-                </button>
-                <button className="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-8 py-4 rounded-xl font-bold transition-all">
-                    Learn How It Works
-                </button>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8 w-full">
-                <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm text-left">
-                    <div className="bg-blue-50 w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-blue-600">
-                        <Zap className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-lg font-bold mb-2 text-slate-800">Fast Analysis</h3>
-                    <p className="text-sm text-slate-500">Get predictions in seconds powered by trained Random Forest models.</p>
+        <div className="flex-grow flex flex-col items-center justify-center py-12 px-4 max-w-full mx-auto text-center relative">
+            <div className="relative z-10 w-full max-w-7xl mx-auto py-20 md:py-0">
+                <div className="inline-flex items-center space-x-2 bg-slate-900/50 backdrop-blur-sm px-3 py-1 rounded-full mb-6 border border-slate-800 shadow-sm">
+                    <HeartPulse className="w-4 h-4 text-primary-400" />
+                    <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Healthcare AI Demo</span>
                 </div>
 
-                <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm text-left">
-                    <div className="bg-green-50 w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-green-600">
-                        <ShieldCheck className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-lg font-bold mb-2 text-slate-800">NLP Powered</h3>
-                    <p className="text-sm text-slate-500">Extracts relevant symptoms from your natural speech or text input.</p>
-                </div>
+                <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 mb-6 leading-tight px-4 md:px-0 animate-pop-in">
+                    Precision-driven health <br />
+                    <span className="text-primary-400 animate-glow-pulse">insights at your fingertips.</span>
+                </h1>
 
-                <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm text-left">
-                    <div className="bg-purple-50 w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-purple-600">
-                        <HeartPulse className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-lg font-bold mb-2 text-slate-800">Care Guidance</h3>
-                    <p className="text-sm text-slate-500">Receive urgency levels and basic precautions for each prediction.</p>
+                <p className="mt-4 font-normal text-sm md:text-base text-neutral-300 max-w-lg text-center mx-auto mb-10 md:mb-16 leading-relaxed px-6 md:px-0">
+                    Describe your symptoms in plain English or upload a photo for instant AI analysis. Experience the future of diagnostic health.
+                </p>
+
+                <div className="flex justify-center mb-12 md:mb-20 px-4">
+                    <button
+                        onClick={onStart}
+                        className="bg-primary-600 hover:bg-primary-700 text-white px-8 md:px-12 py-4 md:py-6 rounded-[2rem] font-bold text-lg md:text-xl flex items-center justify-center space-x-3 transition-all transform hover:scale-105 shadow-2xl shadow-primary-500/30 active:scale-95 group relative overflow-hidden"
+                    >
+                        <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 pointer-events-none" />
+                        <span>Check Yourself 😊</span>
+                        <ArrowRight className="w-5 md:w-6 h-5 md:h-6" />
+                    </button>
                 </div>
             </div>
         </div>
